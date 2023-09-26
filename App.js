@@ -18,6 +18,7 @@ app.use(express.json())
 app.use(cors({
     origin: 'https://webfullstacktodos.netlify.app/',
   credentials: true,
+  methods:"POST"
 }))
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:true}))
