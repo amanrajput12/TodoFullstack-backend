@@ -64,7 +64,7 @@ export const login = async (req, res) => {
          })
        
          console.log(token);
-          res.headers["Access-Control-Allow-Origin"]='*'
+        
          res.cookie('token',token,{
             
            
