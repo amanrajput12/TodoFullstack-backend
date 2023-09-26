@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Accountval } from '../Appwrite/config.js'
 
 const options = {
-    expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+    expiresIn: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
     httpOnly: true
 }
 
@@ -29,10 +29,7 @@ export const register = async (req, res) => {
          }
         
          const token = jwt.sign(payLoad,process.env.JWT_SECRET,options)
-         res.cookie('token',token,{
-          
-            expiresIn:'2h'
-         })
+         res.cookie('token',token,options)
     
 
          res.status(200).json({
