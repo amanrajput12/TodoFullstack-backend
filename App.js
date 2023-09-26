@@ -16,7 +16,7 @@ conncectToDb()
 // middleware
 app.use(express.json())
 app.use(cors({
-    origin: '*',
+    origin: 'https://webfullstacktodos.netlify.app/',
   credentials: true,
 }))
 app.use(bodyParser.json())
