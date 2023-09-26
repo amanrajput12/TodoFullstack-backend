@@ -19,7 +19,7 @@ app.use(cors({
   origin: 'https://webfullstacktodos.netlify.app/', 
   credentials: true, 
   methods: 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-  headers: 'Set-Cookie', 
+
 }));
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:true}))
