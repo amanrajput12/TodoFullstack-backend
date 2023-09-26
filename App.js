@@ -38,35 +38,9 @@ app.get('/',(req,res)=>{
 
 })
 
-app.post('/user',async(req,res)=>{
-try {
-    const {email}= req.body
-    const user = await UserSchema.create({email})
-    res.status(200).json({
-        message:'user created successfully',
-        user
-    })
 
-} catch (error) {
-    console.log(error.message);
-}
-})
 
-app.post('/todo',async(req,res)=>{
-   
-try {
-    
-    const {task}= req.body
-    const todo = await Todo.create({task})
-     res.status(200).json({
-      message:'todo created successfully',
-      todo  
-    })
-} catch (error) {
-    console.log(error.message);
-}
 
-})
 
 
 app.listen(process.env.PORT,()=>{
