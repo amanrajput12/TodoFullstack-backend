@@ -16,10 +16,11 @@ conncectToDb()
 // middleware
 app.use(express.json())
 app.use(cors({
-    origin: 'https://webfullstacktodos.netlify.app/',
-  credentials: true,
-  methods:"POST"
-}))
+  origin: '*', 
+  credentials: true, 
+  methods: 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+  headers: 'Set-Cookie', 
+}));
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookieparser())
