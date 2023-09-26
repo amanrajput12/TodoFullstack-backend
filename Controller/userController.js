@@ -6,8 +6,8 @@ import { v4 as uuidv4 } from 'uuid'
 import { Accountval } from '../Appwrite/config.js'
 
 const options = {
-    expiresIn: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
-    httpOnly: true
+    expiresIn: "6h",
+  
 }
 
 export const register = async (req, res) => {
