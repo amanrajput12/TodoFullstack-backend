@@ -5,6 +5,11 @@ import bcrypt  from 'bcryptjs'
 import { v4 as uuidv4 } from 'uuid'
 import { Accountval } from '../Appwrite/config.js'
 
+const options = {
+    expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+    httpOnly: true
+}
+
 export const register = async (req, res) => {
     const{name,email,password}=req.body
     console.log(name,email,password);
@@ -23,9 +28,7 @@ export const register = async (req, res) => {
             user: singnPromise['$id']
          }
         
-         const token = jwt.sign(payLoad,process.env.JWT_SECRET,{
-            expiresIn:'2h'
-         })
+         const token = jwt.sign(payLoad,process.env.JWT_SECRET,options)
          res.cookie('token',token,{
           
             expiresIn:'2h'
@@ -59,9 +62,7 @@ export const login = async (req, res) => {
            const payLoad ={
             user: promise['userId']
            } 
-           const token = jwt.sign(payLoad,process.env.JWT_SECRET,{
-            expiresIn:"2h"
-         })
+           const token = jwt.sign(payLoad,process.env.JWT_SECRET,options)
        
          console.log(token);
         
