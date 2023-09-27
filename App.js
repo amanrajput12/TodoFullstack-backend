@@ -16,9 +16,9 @@ conncectToDb()
 // middleware
 app.use(express.json())
 app.use(cors({
-  origin: 'https://webfullstacktodos.netlify.app/', 
-  credentials: true, 
-  methods: 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+  origin: 'https://webfullstacktodos.netlify.app/',
+  credentials: true,
+  // methods: 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
 
 }));
 app.use(bodyParser.json())
