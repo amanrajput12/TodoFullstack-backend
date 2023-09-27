@@ -18,7 +18,9 @@ app.use(express.json())
 app.use(cors({
   origin: 'https://webfullstacktodos.netlify.app/',
   credentials: true,
-  // methods: 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 204,
+  
 
 }));
 app.use(bodyParser.json())
